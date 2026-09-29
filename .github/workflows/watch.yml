@@ -27,7 +27,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           CHECK_IN: "2026-10-23"
           ADULTS: "2"
-          DINNER_ONLY: "0"
+          DINNER_ONLY: "1"
           LOOP_MINUTES: "9"
           INTERVAL_SEC: "60"
         run: python monitor.py
