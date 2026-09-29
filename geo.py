@@ -8,6 +8,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
+from curl_cffi import requests as cffi  # ブラウザの通信を再現（Akamai対策）
 
 URL = "https://mvno.geo-mobile.jp/outlet/"
 WEBHOOK = os.getenv("DISCORD_WEBHOOK_URL", "")
@@ -61,8 +62,14 @@ def notify(text: str) -> None:
 def run_once(st: dict) -> None:
     now = datetime.now(JST).strftime("%m/%d %H:%M")
     try:
-        r = requests.get(URL, headers=HEADERS, timeout=30)
-        r.raise_for_status()
+        r = None
+        for imp in ("chrome", "chrome131", "chrome120"):
+            r = cffi.get(URL, impersonate=imp, timeout=30,
+                         headers={"Accept-Language": HEADERS["Accept-Language"]})
+            if r.status_code == 200:
+                break
+        if r.status_code != 200:
+            raise RuntimeError(f"HTTP {r.status_code}（アクセス拒否）")
         items = parse(r.text)
         if not items:
             raise RuntimeError("商品が1件も読み取れない（ページ構造が変わった可能性）")
