@@ -212,7 +212,7 @@ def run_once(st: dict) -> None:
 
     print(f"[{now}] 空き {len(found)}件 / 新規 {len(new)}件")
     if new:
-        lines = [f"@everyone 🎉 **銀山温泉 {d_in:%m/%d} 泊・{ADULTS}名 に空きが出ました！**"]
+        lines = [f" 🎉 **銀山温泉 {d_in:%m/%d} 泊・{ADULTS}名 に空きが出ました！**"]
         for h in new:
             lines.append(f"・**{h['hotel']}**｜{h['meal']}｜{h['price']}\n　{h['plan']}\n　{h['url']}")
         lines.append(f"（{now} 検知）")
