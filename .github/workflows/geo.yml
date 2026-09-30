@@ -24,7 +24,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Check GEO outlet
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.GEO_DISCORD_WEBHOOK_URL }}
           GEO_KEYWORDS: ""        # 例: "iPhone 13,Pixel 8"（空なら全機種）
           LOOP_MINUTES: "9"
           INTERVAL_SEC: "60"
