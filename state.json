@@ -1,4 +1,6 @@
 {
  "seen": [],
- "errors": {}
+ "errors": {
+  "check_rakuten:68602": 1
+ }
 }
