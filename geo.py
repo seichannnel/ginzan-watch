@@ -89,7 +89,7 @@ def run_once(st: dict) -> None:
     st["seen"] = sorted(cur)
     print(f"[{now}] 監視 {len(items)}件 / 在庫あり {len(stock)}件 / 新規 {len(new)}件")
     if new:
-        lines = ["@everyone 📱 **ゲオ アウトレットに在庫が入りました！**"]
+        lines = ["📱 **ゲオ アウトレットに在庫が入りました！**"]
         for i in new:
             cap = f" {i['cap']}" if i["cap"] else ""
             lines.append(f"・**{i['name']}{cap}**｜{i['price']}")
