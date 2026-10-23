@@ -1,14 +1,14 @@
 {
  "seen": [],
  "errors": {
-  "check_rakuten:184539": 30,
-  "check_rakuten:137447": 30,
-  "check_rakuten:68602": 30,
-  "check_rakuten:176672": 30,
-  "check_rakuten:52933": 30,
-  "check_rakuten:111234": 30,
-  "check_rakuten:111235": 30,
-  "check_rakuten:183204": 30,
-  "check_jalan:356689": 30
+  "check_rakuten:184539": 36,
+  "check_rakuten:137447": 36,
+  "check_rakuten:68602": 36,
+  "check_rakuten:176672": 36,
+  "check_rakuten:52933": 36,
+  "check_rakuten:111234": 36,
+  "check_rakuten:111235": 36,
+  "check_rakuten:183204": 36,
+  "check_jalan:356689": 36
  }
 }
